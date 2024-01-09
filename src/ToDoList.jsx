@@ -18,6 +18,9 @@ function ToDoList() {
 
     // Empty the value of task-input
     document.getElementById("taskInput").value = "";
+
+    // Empty task value
+    setNewTask("");
   }
 
   function deleteTask(index) {
