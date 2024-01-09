@@ -1,7 +1,11 @@
 import { useState } from "react";
 
 function ToDoList() {
-  const [tasks, setTasks] = useState(["Write journal"]);
+  const [tasks, setTasks] = useState([
+    "Write journal",
+    "Running",
+    "Coding and solving problems",
+  ]);
   const [newTask, setNewTask] = useState("");
 
   function handleTaskInputChange(e) {
@@ -17,8 +21,36 @@ function ToDoList() {
   }
 
   function deleteTask(index) {
+    // Filter function to remove the
+    // element with same index.
     const filterTaskFunction = tasks.filter((_, i) => i !== index);
     setTasks(filterTaskFunction);
+  }
+
+  function moveTaskUp(index) {
+    if (index > 0) {
+      setTasks((t) => {
+        const prevTasks = [...t];
+        [prevTasks[index], prevTasks[index - 1]] = [
+          prevTasks[index - 1],
+          prevTasks[index],
+        ];
+        return prevTasks;
+      });
+    }
+  }
+
+  function moveTaskDown(index) {
+    if (index < tasks.length - 1) {
+      setTasks((t) => {
+        const prevTasks = [...t];
+        [prevTasks[index], prevTasks[index + 1]] = [
+          prevTasks[index + 1],
+          prevTasks[index],
+        ];
+        return prevTasks;
+      });
+    }
   }
 
   return (
@@ -48,8 +80,15 @@ function ToDoList() {
               >
                 Delete
               </button>
-              <button className="btn btn-up">Up</button>
-              <button className="btn btn-down">Down</button>
+              <button className="btn btn-up" onClick={() => moveTaskUp(index)}>
+                Up
+              </button>
+              <button
+                className="btn btn-down"
+                onClick={() => moveTaskDown(index)}
+              >
+                Down
+              </button>
             </li>
           );
         })}
