@@ -1,5 +1,8 @@
+import { useState } from "react";
 
 function ToDoList() {
+    const [tasks, setTasks] = useState([]);
+    const [newTask, setNewTask] = useState("");
 
     return (
         <div className="container">
@@ -9,7 +12,7 @@ function ToDoList() {
             </p>
 
             <ul>
-                <li>Hello</li>
+                <li></li>
             </ul>
         </div>
     )
