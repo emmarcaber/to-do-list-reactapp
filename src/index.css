@@ -1,5 +1,82 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    background-color: hsl(0, 0%, 80%);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+    font-size: 48px;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.btn {
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    margin: 2px 5px;
+    color: white;
+    font-size: 1rem;
+}
+
+.form-input {
+    padding: 12px 10px;
+    width: 24em;
+    border: none;
+    font-size: 1rem;
+}
+
+.form-control {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.ordered-list {
+    margin-top: 1.5em;
+    margin-bottom: .5em;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.list-items {
+    background-color: #343a40;
+    list-style: none;
+    color: hsl(0, 0%, 90%);
+    padding: .5em 1.5em;
+    padding-right: 3em;
+}
+
+.txt-task {
+    padding: 0px 1em;
+}
+
+.btn-add {
+    margin: 0 -2px;
+    background-color: #007bff;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+.btn-up {
+    background-color: #ffc107;
+}
+
+.btn-down {
+    background-color: #17a2b8;
 }
